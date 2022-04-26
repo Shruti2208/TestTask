@@ -13,7 +13,7 @@ class MapView extends StatefulWidget {
 }
 
 class _MapViewState extends State<MapView> {
-  Map<PolylineId, Polyline> _mapPolylines = {};
+  final Map<PolylineId, Polyline> mapPolyLines = {};
   int _polylineIdCounter = 1;
 
   void _add(DataModel data) {
@@ -30,14 +30,14 @@ class _MapViewState extends State<MapView> {
     );
 
     setState(() {
-      _mapPolylines[polylineId] = polyline;
+      mapPolyLines[polylineId] = polyline;
     });
   }
 
   List<LatLng> _createPoints(DataModel data) {
     final List<LatLng> points = <LatLng>[];
-    for (var element in data.data) {
-      points.add(LatLng(element.lat, element.lon));
+    for (var element in data.data!) {
+      points.add(LatLng(element.lat!, element.lon!));
     }
 
     return points;
@@ -47,7 +47,6 @@ class _MapViewState extends State<MapView> {
   void initState() {
     var homeViewProvider =
         Provider.of<HomeViewProvider>(context, listen: false);
-    // homeViewProvider.init();
     _add(homeViewProvider.data);
 
     super.initState();
@@ -58,10 +57,10 @@ class _MapViewState extends State<MapView> {
     return Consumer<HomeViewProvider>(builder: (ctx, homeViewProvider, child) {
       return GoogleMap(
         initialCameraPosition: CameraPosition(
-            target: LatLng(homeViewProvider.data.data.first.lat,
-                homeViewProvider.data.data.first.lon),
+            target: LatLng(homeViewProvider.data.data!.first.lat!,
+                homeViewProvider.data.data!.first.lon!),
             zoom: 15.0),
-        polylines: Set<Polyline>.of(_mapPolylines.values),
+        polylines: Set<Polyline>.of(mapPolyLines.values),
       );
     });
   }

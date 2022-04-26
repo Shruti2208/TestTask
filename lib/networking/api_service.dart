@@ -5,9 +5,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:retry/retry.dart';
 
-enum Method { POST, GET, PUT, DELETE, PATCH }
+enum Method { post, get, put, delete, patch }
 
-const BASE_URL =
+const baseUrl =
     "https://us-central1-mynextbase-connect.cloudfunctions.net/sampleData?page=0";
 
 class HttpService {
@@ -44,11 +44,11 @@ class HttpService {
     Response response;
 
     try {
-      if (method == Method.POST) {
+      if (method == Method.post) {
         response = await dio.post(url, data: params);
-      } else if (method == Method.DELETE) {
+      } else if (method == Method.delete) {
         response = await dio.delete(url);
-      } else if (method == Method.PATCH) {
+      } else if (method == Method.patch) {
         response = await dio.patch(url);
       } else {
         const r = RetryOptions(maxAttempts: 8);

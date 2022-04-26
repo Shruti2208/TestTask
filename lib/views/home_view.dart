@@ -30,15 +30,15 @@ class _HomeViewState extends State<HomeView> {
       List<charts.Series<Datum, double>> series = [
         charts.Series(
             id: "xAcc v/s yAcc",
-            data: homeViewProvider.data.data,
-            domainFn: (Datum series, _) => series.xAcc,
+            data: homeViewProvider.data.data!,
+            domainFn: (Datum series, _) => series.xAcc!,
             measureFn: (Datum series, _) => series.yAcc,
             colorFn: (Datum series, _) =>
                 charts.MaterialPalette.blue.shadeDefault),
         charts.Series(
             id: "xAcc v/s zAcc",
-            data: homeViewProvider.data.data,
-            domainFn: (Datum series, _) => series.xAcc,
+            data: homeViewProvider.data.data!,
+            domainFn: (Datum series, _) => series.xAcc!,
             measureFn: (Datum series, _) => series.zAcc,
             colorFn: (Datum series, _) =>
                 charts.MaterialPalette.red.shadeDefault)

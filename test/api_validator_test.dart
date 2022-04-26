@@ -54,7 +54,7 @@ void main() async {
       expect(response.statusCode, 200);
 
       response = await HttpService()
-          .request(url: baseUrl, method: Method.GET, dio: dio, params: {});
+          .request(url: baseUrl, method: Method.get, dio: dio, params: {});
       expect(response.data, data);
     });
   });

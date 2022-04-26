@@ -4,7 +4,7 @@ class CircularProgressbarFullscreen extends StatelessWidget {
   const CircularProgressbarFullscreen({
     Key? key,
     required this.title,
-  }) : assert(title != null);
+  }) : super(key: key);
   final String title;
 
   @override
