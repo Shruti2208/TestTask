@@ -72,7 +72,6 @@ class HttpService {
           }
         }
 
-        // response = await _dio.get(url, queryParameters: params);
       }
     } finally {}
   }
