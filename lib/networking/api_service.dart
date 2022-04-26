@@ -16,8 +16,6 @@ class HttpService {
   static header() => {"Content-Type": "application/json"};
 
   Future<HttpService> init() async {
-    // _dio = Dio(BaseOptions(baseUrl: BASE_URL, headers: header()));
-    // initInterceptors();
     return this;
   }
 
@@ -36,47 +34,6 @@ class HttpService {
       ),
     );
   }
-
-  // Future<dynamic> request(
-  //     {String url, Method method, Map<String, dynamic> params}) async {
-  //   Response response;
-  //
-  //   try {
-  //     if (method == Method.POST) {
-  //       response = await _dio.post(url, data: params);
-  //     } else if (method == Method.DELETE) {
-  //       response = await _dio.delete(url);
-  //     } else if (method == Method.PATCH) {
-  //       response = await _dio.patch(url);
-  //     } else {
-  //       const r = RetryOptions(maxAttempts: 8);
-  //       response = await r.retry(
-  //         // Make a GET request
-  //         () => _dio
-  //             .get(url, queryParameters: params)
-  //             .timeout(const Duration(seconds: 5)),
-  //         // Retry on SocketException or TimeoutException
-  //         retryIf: (e) =>
-  //             e is SocketException || e is TimeoutException || e is DioError,
-  //       );
-  //       if (kDebugMode) {
-  //         print(response);
-  //       }
-  //       if (response.statusCode == 200) {
-  //         if (kDebugMode) {
-  //           print('google.com is running');
-  //         }
-  //         return response;
-  //       } else {
-  //         if (kDebugMode) {
-  //           print('google.com is not available...');
-  //         }
-  //       }
-  //
-  //       // response = await _dio.get(url, queryParameters: params);
-  //     }
-  //   } finally {}
-  // }
 
   Future<dynamic> request(
       {String url, Method method, Map<String, dynamic> params, Dio dio}) async {
