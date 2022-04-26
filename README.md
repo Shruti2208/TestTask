@@ -12,3 +12,5 @@ records are downloaded successfully.
   3. In a secondary page, show the “lat”/”lon” parameters within a
 simple Google/Apple Map within the App. The display should reflect the path of a
 journey.
+
+![Simulator Screen Shot - iPhone 13 - 2022-04-26 at 15 05 34](https://user-images.githubusercontent.com/60172172/165320075-89c58184-dc9f-427f-bdbb-673b08dcdeea.png)
