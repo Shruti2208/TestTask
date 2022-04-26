@@ -3,7 +3,7 @@ import 'package:nextbase_task/views/home_view.dart';
 import 'package:nextbase_task/views/map_view.dart';
 
 class TabBarScreen extends StatefulWidget {
-  const TabBarScreen({Key key}) : super(key: key);
+  const TabBarScreen({Key? key}) : super(key: key);
 
   @override
   State<TabBarScreen> createState() => _TabBarScreenState();

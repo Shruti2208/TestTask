@@ -36,7 +36,10 @@ class HttpService {
   }
 
   Future<dynamic> request(
-      {String url, Method method, Map<String, dynamic> params, Dio dio}) async {
+      {required String url,
+      required Method method,
+      required Map<String, dynamic> params,
+      required Dio dio}) async {
     initInterceptors(dio);
     Response response;
 
@@ -71,7 +74,6 @@ class HttpService {
             print('google.com is not available...');
           }
         }
-
       }
     } finally {}
   }

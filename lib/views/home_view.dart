@@ -7,7 +7,7 @@ import '../data_model.dart';
 import '../widgets/circular_progressbar.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({Key key}) : super(key: key);
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   State<HomeView> createState() => _HomeViewState();

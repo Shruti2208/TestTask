@@ -6,7 +6,7 @@ import '../data_model.dart';
 import '../home_view_provider.dart';
 
 class MapView extends StatefulWidget {
-  const MapView({Key key}) : super(key: key);
+  const MapView({Key? key}) : super(key: key);
 
   @override
   State<MapView> createState() => _MapViewState();

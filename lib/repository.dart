@@ -24,8 +24,8 @@ class APIRepository {
       HttpService httpService, List<Datum> graphData, String baseUrl) async {
     Dio _dio;
     _dio = Dio(BaseOptions(baseUrl: BASE_URL, headers: header()));
-    final result =
-        await httpService.request(url: baseUrl, method: Method.GET, dio: _dio);
+    final result = await httpService
+        .request(url: baseUrl, method: Method.GET, dio: _dio, params: {});
     if (kDebugMode) {
       print(baseUrl);
     }

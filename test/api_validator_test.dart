@@ -6,8 +6,8 @@ import 'package:http_mock_adapter/http_mock_adapter.dart';
 import 'package:nextbase_task/networking/api_service.dart';
 
 void main() async {
-  Dio dio;
-  DioAdapter dioAdapter;
+  Dio dio = Dio();
+  DioAdapter dioAdapter = DioAdapter(dio: dio);
 
   Response<dynamic> response;
 
@@ -54,7 +54,7 @@ void main() async {
       expect(response.statusCode, 200);
 
       response = await HttpService()
-          .request(url: baseUrl, method: Method.GET, dio: dio);
+          .request(url: baseUrl, method: Method.GET, dio: dio, params: {});
       expect(response.data, data);
     });
   });
